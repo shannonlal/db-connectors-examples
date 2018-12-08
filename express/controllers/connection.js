@@ -1,7 +1,7 @@
 
 const HTTP_OK = 200, BAD_REQUEST = 400;
 // UNEXPECTED_ERROR=500;
-const {Datastores} = require('../../../src/index');
+const {Datastores} = require('db-connectors');
 
 const connectController = async(app) => {
 

@@ -3,6 +3,7 @@ const proxyrequire = require('proxyquire');
 const chai = require('chai');
 const supertest = require('supertest');
 const expect = chai.expect;
+const {DIALECTS} = require('db-connectors');
 
 /* eslint-disable */
 const should = chai.should();
@@ -26,10 +27,10 @@ const datastoresMock = {
         });
     }
 };
-const connectionController = proxyrequire('../../controllers/connection', {'../../../src/index':{ Datastores: datastoresMock} } );  // eslint-disable-line
+const connectionController = proxyrequire('../../controllers/connection', {'db-connectors':{ Datastores: datastoresMock} } );  // eslint-disable-line
 const server = proxyrequire('../../app', {'./controllers/connection': connectionController});
 const request = supertest(server);
-const {DIALECTS} = require('../../../../src');
+
 
 describe('Connection ', () => {
 

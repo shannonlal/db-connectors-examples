@@ -53,6 +53,8 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "db-connectors": "^0.0.6",
+    "jsonschema": "^1.2.4",
     "sequelize": "3.30.4",
     "winston": "^3.1.0"
   },

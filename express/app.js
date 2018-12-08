@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const cors = require('cors');
 const connectionController = require('./controllers/connection');
+const commonController = require('./controllers/common');
 const {validateRequest, loggerMiddleware} = require('./middleware');
 require('./common/db');
 const orm = require('./common/orm');
@@ -26,6 +27,7 @@ app.use( validateRequest );
 //app.use(express.static(__dirname + '/public'))
 
 connectionController(app);
+commonController(app);
 
 logger.info(`DB-Connector Server start on ${SERVER_PORT}`);
 
